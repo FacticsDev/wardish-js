@@ -1,0 +1,24 @@
+{
+  "name": "wardish-js",
+  "version": "1.0.0",
+  "description": "JavaScript utilities for web development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wardish/wardish-js.git"
+  },
+  "author": "Wardish,LLC.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Wardish/wardish-js/issues"
+  },
+  "homepage": "https://github.com/Wardish/wardish-js#readme",
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "jsdom": "^13.2.0",
+    "mocha": "^5.2.0"
+  }
+}
