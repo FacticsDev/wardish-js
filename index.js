@@ -1,2 +1,3 @@
-'use strict'
-module.exports = {}
+module.exports = {
+    input: require('libs/InputData')
+}
