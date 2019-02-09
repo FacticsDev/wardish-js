@@ -1,3 +1,3 @@
 module.exports = {
-    input: require('./libs/InputData')
+    input: require('./libs/InputField')
 }

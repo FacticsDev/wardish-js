@@ -1,7 +1,7 @@
 var assert = require('assert')
 var context = require('./context')
 
-describe("InputData", function() {
+describe("InputField", function() {
     var html = `
         <html>
         <head>
@@ -45,8 +45,8 @@ describe("InputData", function() {
         context.loadHtml(html)
         var $ = context.jQuery
 
-        var inputData = require('../libs/InputData')
-        assert.deepEqual(inputData.getData(),
+        var inputField = require('../libs/InputField')
+        assert.deepEqual(inputField.getData(),
             {
                 prop1: 'Success1',
                 prop3: 'Success3'
@@ -58,8 +58,8 @@ describe("InputData", function() {
         context.loadHtml(html)
         var $ = context.jQuery
 
-        var inputData = require('../libs/InputData')
-        assert.deepEqual(inputData.getData('.search-field'),
+        var inputField = require('../libs/InputField')
+        assert.deepEqual(inputField.getData('.search-field'),
             {
                 prop2: 'Success2'
             }
@@ -70,8 +70,8 @@ describe("InputData", function() {
         context.loadHtml(html)
         var $ = context.jQuery
 
-        var inputData = require('../libs/InputData')
-        assert.deepEqual(inputData.getData('#sec3 .data-field'),
+        var inputField = require('../libs/InputField')
+        assert.deepEqual(inputField.getData('#sec3 .data-field'),
             {
                 prop3: 'Success3'
             }
@@ -82,8 +82,8 @@ describe("InputData", function() {
         context.loadHtml(html)
         var $ = context.jQuery
 
-        var inputData = require('../libs/InputData')
-        assert.deepEqual(inputData.getData('#sec5 .prop-field'),
+        var inputField = require('../libs/InputField')
+        assert.deepEqual(inputField.getData('#sec5 .prop-field'),
             {
                 'prop5-1': 'Success5-1',
                 'prop5-2': 'Success5-2',

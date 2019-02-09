@@ -3,13 +3,13 @@ var $ = require('jquery')
 /**
  * input要素の入力値を取得するためのユーティリティー
  */
-var InputData = function() {
+var InputField = function() {
 };
 
 /**
  * POSTするためのデータを生成します
  */
-InputData.prototype.getData = function(selector, attrName) {
+InputField.prototype.getData = function(selector, attrName) {
     if ( !selector ) selector = '.data-field'
     if ( !attrName ) attrName = 'id'
 
@@ -35,4 +35,4 @@ InputData.prototype.getData = function(selector, attrName) {
     return data
 };
 
-module.exports = new InputData()
+module.exports = new InputField()
