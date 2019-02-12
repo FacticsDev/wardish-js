@@ -59,7 +59,7 @@ Overlay.prototype.init = function () {
     font-weight: bold;
 }`
     var formattedCSS = util.format(css, this.containerSelector, this.contentAreaSelector, this.loadingIconSelector, this.messageAreaSelector)
-    $('<style/>').attr('id', this.messageAreaSelector).text(formattedCSS).appendTo('head')
+    $('<style/>').text(formattedCSS).appendTo('head')
 }
 
 
