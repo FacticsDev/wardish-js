@@ -43,7 +43,6 @@ describe("InputField", function() {
 
     it("Has .data-field elements", function() {
         context.loadHtml(html)
-        var $ = context.jQuery
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData(),
@@ -56,7 +55,6 @@ describe("InputField", function() {
 
     it("Has .search-field elements", function() {
         context.loadHtml(html)
-        var $ = context.jQuery
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('.search-field'),
@@ -68,7 +66,6 @@ describe("InputField", function() {
 
     it("Has #sec3 parent", function() {
         context.loadHtml(html)
-        var $ = context.jQuery
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('#sec3 .data-field'),
@@ -80,7 +77,6 @@ describe("InputField", function() {
 
     it("Has variable type of element", function() {
         context.loadHtml(html)
-        var $ = context.jQuery
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('#sec5 .prop-field'),

@@ -9,10 +9,9 @@ Context.prototype.loadHtml = function (html) {
     const { JSDOM } = require('jsdom')
     const jsdom = new JSDOM(html)
     const { window } = jsdom
-    const { document } = window
-    this.window = global.window = window
-    this.document = global.document = document
-    this.jQuery = global.$ = global.jQuery = require('jquery')(window)
+    const { document } = jsdom.window
+    global.window = window
+    global.document = document
 
     return true;
 }
