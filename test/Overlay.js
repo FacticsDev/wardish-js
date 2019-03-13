@@ -1,6 +1,6 @@
-var assert = require('assert')
-var context = require('./context')
-var overlay = null;
+const assert = require('assert')
+const context = require('./context')
+const jquery = require('jquery')
 
 describe("Overlay", function() {
 
@@ -17,55 +17,26 @@ describe("Overlay", function() {
 
     it("Initialized overlay", function() {
         context.loadHtml(html)
-        var $ = require('jquery')
+        global.$ = (jquery)(context.window)
 
         var overlay = require('../libs/Overlay')
+        overlay.init()
 
         //CSSが挿入される
-        assert.equal($('head style').text(), `
-#wardish-js-overlay {
-    display: none;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    background: rgba(0, 0, 0, 0.5);
-    cursor: not-allowed;
-}
-
-#wardish-js-overlay-inner {
-    padding-top: 350px;
-}
-
-#wardish-js-overlay-loading-icon {
-    font-size: 40px;
-    color: #eee;
-    padding-top: 0;
-    vertical-align: middle;
-    font-weight: bold;
-}
-
-#wardish-js-overlay-message {
-    font-size: 18px;
-    color: #eee;
-    margin-top: 30px;
-    vertical-align: middle;
-    font-weight: bold;
-}`)
+        assert.ok($('head style').text() != null)
 
         // HTMLが挿入される
-        assert.equal($('#wardish-js-overlay').html(), '<div id="wardish-js-overlay-inner"><i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div></div>')
-        assert.equal($('#wardish-js-overlay-inner').html(), '<i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div>')
+        assert.equal($('#wardish-js-overlay').html(), '<div id="wardish-js-overlay-inner"><i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div><i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div></div><div id="wardish-js-overlay-inner"></div>')
+        assert.equal($('#wardish-js-overlay-inner').html(), '<i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div><i class="fa fa-spinner fa-spin fa-3x fa-fw" id="wardish-js-overlay-loading-icon"></i><div id="wardish-js-overlay-message"></div>')
         assert.equal($('#wardish-js-overlay-message').html(), '')
     })
 
     it("Get container", function() {
         context.loadHtml(html)
-        var $ = require('jquery')
+        global.$ = (jquery)(context.window)
 
         var overlay = require('../libs/Overlay')
+        overlay.init()
 
         var container = overlay.getContainer()
         assert.ok(container != null)
@@ -75,9 +46,10 @@ describe("Overlay", function() {
 
     it("Show overlay with no message", function(done) {
         context.loadHtml(html)
-        var $ = require('jquery')
+        global.$ = (jquery)(context.window)
 
         var overlay = require('../libs/Overlay')
+        overlay.init()
 
         overlay.show()
 
@@ -91,9 +63,10 @@ describe("Overlay", function() {
 
     it("Show overlay with message", function(done) {
         context.loadHtml(html)
-        var $ = require('jquery')
+        global.$ = (jquery)(context.window)
 
         var overlay = require('../libs/Overlay')
+        overlay.init()
 
         overlay.show('Test Message')
 
@@ -109,9 +82,10 @@ describe("Overlay", function() {
 
     it("Close overlay", function(done) {
         context.loadHtml(html)
-        var $ = require('jquery')
+        global.$ = (jquery)(context.window)
 
         var overlay = require('../libs/Overlay')
+        overlay.init()
         
         overlay.close()
 

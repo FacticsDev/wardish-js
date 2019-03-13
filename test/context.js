@@ -13,6 +13,8 @@ Context.prototype.loadHtml = function (html) {
     global.window = window
     global.document = document
 
+    this.window = window
+
     return true;
 }
 

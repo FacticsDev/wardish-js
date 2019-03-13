@@ -1,5 +1,6 @@
-var assert = require('assert')
-var context = require('./context')
+const assert = require('assert')
+const context = require('./context')
+const jquery = require('jquery')
 
 describe("InputField", function() {
     var html = `
@@ -33,9 +34,9 @@ describe("InputField", function() {
             <option value="Success5-4-1">Success5-4-1</option>
             <option value="Success5-4-2" selected>Success5-4-2</option>
 
-            <input type="radio" name="radioButton" class="prop-field" id="prop5-5-1" value="Success5-5-1" checked />
-            <input type="radio" name="radioButton" class="prop-field" id="prop5-5-2" value="Success5-5-2" />
-            <input type="radio" name="radioButton" class="prop-field" id="prop5-5-3" value="Success5-5-3" />
+            <input type="radio" name="prop5-5" class="prop-field" id="prop5-5-1" value="Success5-5-1" checked />
+            <input type="radio" name="prop5-5" class="prop-field" id="prop5-5-2" value="Success5-5-2" />
+            <input type="radio" name="prop5-5" class="prop-field" id="prop5-5-3" value="Success5-5-3" />
             </select>
           </div>
         </body>
@@ -43,6 +44,7 @@ describe("InputField", function() {
 
     it("Has .data-field elements", function() {
         context.loadHtml(html)
+        global.$ = (jquery)(context.window)
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData(),
@@ -55,6 +57,7 @@ describe("InputField", function() {
 
     it("Has .search-field elements", function() {
         context.loadHtml(html)
+        global.$ = (jquery)(context.window)
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('.search-field'),
@@ -66,6 +69,7 @@ describe("InputField", function() {
 
     it("Has #sec3 parent", function() {
         context.loadHtml(html)
+        global.$ = (jquery)(context.window)
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('#sec3 .data-field'),
@@ -77,6 +81,7 @@ describe("InputField", function() {
 
     it("Has variable type of element", function() {
         context.loadHtml(html)
+        global.$ = (jquery)(context.window)
 
         var inputField = require('../libs/InputField')
         assert.deepEqual(inputField.getData('#sec5 .prop-field'),
