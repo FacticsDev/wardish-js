@@ -16,18 +16,22 @@ InputField.prototype.getData = function(selector, attrName) {
         $this = $(this)
         var value = $this.val()
 
-        //セレクトボックス
+        
         if ( $this.is('select') ) {
+            //セレクトボックス
             value = $this.find('option:selected').val()
         }
-        //ラジオボタン
+        
         if ( $this.is('input[type=radio]') ) {
+            //ラジオボタン
             var name = $this.attr('name')
             $this = $('input[name=' + name + ']:checked')
             value = $this.val()
-        }
-        if ( $this.attr(attrName) ) {
-            data[$this.attr(attrName)] = value
+            data[name] = value
+        } else {
+            if ( $this.attr(attrName) ) {
+                data[$this.attr(attrName)] = value
+            }
         }
     })
     return data

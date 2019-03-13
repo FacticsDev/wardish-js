@@ -90,7 +90,7 @@ describe("InputField", function() {
                 'prop5-2': 'Success5-2',
                 'prop5-3': 'Success5-3',
                 'prop5-4': 'Success5-4-2',
-                'prop5-5-1': 'Success5-5-1'
+                'prop5-5': 'Success5-5-1'
             }
         )
     })
