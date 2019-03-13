@@ -14,4 +14,10 @@ describe("index.js", function() {
         assert.notEqual(utils.overlay, null)
         assert.notEqual(utils.overlay.show, null)
     })
+    it("Success Message require", function() {
+        var utils = require('../index')
+
+        assert.notEqual(utils.message, null)
+        assert.notEqual(utils.message.showInfoMessage, null)
+    })
 })
