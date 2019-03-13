@@ -1,6 +1,6 @@
 {
   "name": "wardish-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JavaScript utilities for web development.",
   "main": "index.js",
   "scripts": {
