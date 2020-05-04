@@ -34,8 +34,8 @@ Overlay.prototype.init = function () {
     position: fixed;
     top: 0;
     z-index: 99999;
-    background: rgba(0, 0, 0, 0.5);
-    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.0);
+    cursor: wait;
 }
 
 #%s {
@@ -44,7 +44,7 @@ Overlay.prototype.init = function () {
 
 #%s {
     font-size: 40px;
-    color: #eee;
+    color: #rgba(0, 0, 0, 0.8);
     padding-top: 0;
     vertical-align: middle;
     font-weight: bold;
@@ -52,7 +52,7 @@ Overlay.prototype.init = function () {
 
 #%s {
     font-size: 18px;
-    color: #eee;
+    color: #rgba(0, 0, 0, 0.8);
     margin-top: 30px;
     vertical-align: middle;
     font-weight: bold;
